@@ -8,16 +8,14 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="container" class="container">
+    <div id="divLogin" class="container">
         <h2>Login</h2>
-        <form id="forms">
-            <label for="login">Nome de Usuário:</label>
-            <input name="user" type="text">
-            <label for="senha">Senha:</label>
-            <input name="senha" type="password">
-            <button type="submit">Login</button>
-            <p class="paragrafo">
-                Não tem uma conta? <a href="../registrar/index.html">Registre-se</a>
+        <form id="formLogin">
+            <input type="text" id="userLogin" name="usernameLogin" placeholder="User">
+            <input type="password" id="passwordLogin" name="passwordLogin" placeholder="Password">
+            <button type="submit" class="button-page">Login</button>
+            <p class="p-div">
+                Don't have an account? <a href="../signup/index.html">Sign up!</a>
             </p>
         </form>
     </div>

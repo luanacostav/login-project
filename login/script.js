@@ -1,55 +1,60 @@
-const div = document.querySelector('div')
+// _____________________________ LOGIN PAGE _____________________________
 
-const form = document.getElementById('forms')
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault()
-        // console.log(e)
-        const usuario = e.target.user.value
-        console.log(usuario)
-    
-        const senha = e.target.senha.value
-        console.log(senha)
-    
-        // Outra página
-        // window.location.href = recebe o nome do arquivo
-        let user = localStorage.getItem('usuario')
-        console.log(user)
-        let password = localStorage.getItem('senha')
-        console.log(password)
-    
-        if (usuario === user && senha === password) {
-            window.location.href = '../boas_vindas/index.html'
+const formLogin = document.getElementById('formLogin')
+
+if (formLogin) {
+    formLogin.addEventListener('submit', (event) => {
+        event.preventDefault()
+        
+        let userLogin = event.target.usernameLogin.value
+        let passwordLogin = event.target.passwordLogin.value
+        
+        let userStorage = localStorage.getItem('username')
+        let pwordStorage = localStorage.getItem('password')
+        
+        if (userLogin === userStorage && passwordLogin === pwordStorage) {
+            window.location.href = '../welcome/index.html'
         } else {
-            alert('Deu ruim')
+            alert('ERROR')
         }
-
-
     })
 }
 
-const botao_sair = document.getElementById('botao-sair')
-if (botao_sair) {
-    console.log(botao_sair)
-    
-    botao_sair.addEventListener('click', () => {
+// _____________________________ SIGN UP PAGE _____________________________
+
+const formSignup = document.getElementById('formSignup')
+
+if (formSignup) {
+    formSignup.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        let userSignup = event.target.usernameSignup.value
+        let passwordSignup = event.target.passwordSignup.value
+        // console.log('Username: ', userSignup)
+        // console.log('Password: ', passwordSignup)
+
+        localStorage.setItem('username', userSignup)
+        localStorage.setItem('password', passwordSignup)
+
+        alert('Sucess!')
+    })
+}
+
+// _____________________________ WELCOME PAGE _____________________________
+
+const titleWelcome = document.getElementById('titleWelcome')
+
+if (titleWelcome) {
+    let username = localStorage.getItem('username')
+    let title = document.createElement('h1')
+    title.textContent = `Welcome, ${username}!`
+    titleWelcome.appendChild(title)
+}
+
+const buttonExit = document.getElementById('buttonExit')
+
+if (buttonExit) {
+    buttonExit.addEventListener('click', () => {
         window.location.href = '../login/index.html'
-    })
-}
-
-const formRegistro = document.getElementById('formRegistro')
-if (formRegistro) {
-    formRegistro.addEventListener('submit', (e) => {
-        e.preventDefault()
-
-        const usuario = e.target.usuario.value
-        console.log(usuario)
-    
-        const senha = e.target.senha.value
-        console.log(senha)
-
-        localStorage.setItem('usuario', usuario)
-        localStorage.setItem('senha', senha)
-        alert('Cadastrado com Sucesso!')
     })
 }

@@ -1,8 +1,15 @@
+:root {
+    --primary-color: #f06e75;
+    --secondary-color: #1e1e2a;
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
 body, html {
@@ -13,53 +20,72 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(128, 128, 128, 0.336);
-}
-
-button {
-    background: rgb(146, 146, 232);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px;
-}
-
-button:hover {
-    background: rgb(109, 109, 230);
-}
-
-button:active {
-    transform: scale(1.05);
+    background: var(--secondary-color);
 }
 
 input {
+    background: transparent;
     padding: 7px;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
+input:focus {
+    outline: none;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.578);
+    align-items: center;
+    width: 23%;
+    height: 390px;
     padding: 40px 25px;
-    background: white;
-    box-shadow: 0 0 10px rgba(128, 128, 128, 0.801);
-    gap: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    gap: 20px;
+    background: linear-gradient(var(--secondary-color), #1e1e2aa8),
+    url('../img/backgroud.jpg');
+    background-size: cover;
 }
 
-.paragrafo {
-    font-size: small;
+.button-page {
+    background: var(--primary-color);
+    color: white;
+    width: 170px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    margin-top: 30px;
 }
 
-.botao-sair {
-    width: 50px;
-}
-
-.botao-sair:hover {
-    background: rgb(109, 109, 230);
-}
-
-.botao-sair:active {
+.button-page:hover {
+    cursor: pointer;
+    background: #d3434a;
     transform: scale(1.05);
 }
 
+.p-div {
+    margin-top: 50px;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title-welcome {
+    font-size: 15px;
+}
+
+.container-welcome {
+    width: 40%;
+    height: 200px;
+    background: linear-gradient(45deg, #1d032f7d, #151017af),
+    url('../img/background-welcome.jpeg');
+    background-size: cover;
+}
